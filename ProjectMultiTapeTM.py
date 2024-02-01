@@ -4,7 +4,7 @@ class State:
         self.final = final
         self.next = {}
 
-    #get the symbols from the tapes and the next state
+    #get the transition from the given symbols
     #retrieve the possible transitions from the current state to the next state based on the input symbols read from the tapes.
     def delta(self, symbol1, symbol2, symbol3):
         return self.next.get((symbol1, symbol2, symbol3), []) + self.next.get(('', symbol2, symbol3), []) + \
